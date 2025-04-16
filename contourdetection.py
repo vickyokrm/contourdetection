@@ -28,6 +28,7 @@ for cnt in contours:
     area = cv2.contourArea(cnt)
     aspect_ratio = w / float(h)
 
+    # extract all possible symbols
     symbol_crop = image[y:y+h, x:x+w]
     symbol_path = os.path.join(output_dir, f"symbol_{all_symbols + 1}.png")
     cv2.imwrite(symbol_path, symbol_crop)
