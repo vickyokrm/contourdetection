@@ -34,7 +34,7 @@ for cnt in contours:
     cv2.imwrite(symbol_path, symbol_crop)
     all_symbols += 1
 
-    # Check if the contour meets the criteria
+    # Check if the contour meets the criteria for square/rectangular symbols
     if area > min_area and aspect_ratio_range[0] < aspect_ratio < aspect_ratio_range[1]:
         symbol_crop = image[y:y+h, x:x+w]
         symbol_path = os.path.join(output_dir, f"symbol_uni{symbol_count + 1}.png")
